@@ -1,0 +1,119 @@
+/* Forms */
+/* Source: https://www.sanwebe.com/2014/08/css-html-forms-designs */
+
+/* Center Forms */
+/*
+#content {
+    text-align: center;
+} */
+
+.special-heading {
+    font: 18px;
+	font-weight: bold;
+    border-bottom: 2px solid #ddd;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    padding-bottom: 3px;
+    width: 20%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form-instructions {
+    margin-left: 10px;
+    font-family: Roboto-Regular;
+    font-size: 12px;
+    
+}
+
+fieldset legend {
+    /* font: 18px "Lucida Sans Unicode", "Lucida Grande", sans-serif; */
+    font-family: WorkSans-Bold;   /* Or Regular */
+    font-size: 19px;
+    font-weight: bold;
+    margin-bottom: 10px;   
+}
+
+fieldset {
+    border: 2px solid #ddd;
+    width: 20%;
+    margin-top: 35px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+form {
+    /* font: 13px "Lucida Sans Unicode", "Lucida Grande", sans-serif; */
+    font-size: 14px;
+    margin-bottom: 40px;
+}
+
+form label {
+    font-family: WorkSans-Regular;
+    /* font-weight: bold; */
+    margin-bottom: 0px;
+    margin-left: 18%;
+}
+
+input[type = text], 
+input[type = date], 
+input[type = datetime],
+input[type = number],
+input[type = search],
+input[type =time],
+input[type = url],
+input[type = email],
+textarea,
+select {
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+    border: 1px solid #BEBEBE;
+    padding: 4px;
+    margin-top: 0px;
+    margin-bottom: 9px;
+	-webkit-transition: all 0.30s ease-in-out;
+	-moz-transition: all 0.30s ease-in-out;
+	-ms-transition: all 0.30s ease-in-out;
+	-o-transition: all 0.30s ease-in-out;
+    outline: none;
+    margin-left: 18%;
+}
+
+
+input[type = text]:focus, 
+input[type = date]:focus,
+input[type = datetime]:focus,
+input[type = number]:focus,
+input[type = search]:focus,
+input[type = time]:focus,
+input[type = url]:focus,
+input[type = email]:focus,
+textarea:focus, 
+select:focus{
+	-moz-box-shadow: 0 0 4px #88D5E9;
+	-webkit-box-shadow: 0 0 4px #88D5E9;
+	box-shadow: 0 0 4px #88D5E9;
+    border: 1px solid #88D5E9;
+}
+
+
+input[type = submit], input[type = button] {
+	background: #4B99AD;
+	padding: 8px 15px 8px 15px;
+	border: none;
+    color: #fff;
+    margin-left: 40%;
+    margin-top: 10px;
+}
+
+input[type = submit]:hover, input[type = button]:hover {
+	background: #4691A4;
+	box-shadow: none;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+}
+
+.required{
+	color: red;
+}

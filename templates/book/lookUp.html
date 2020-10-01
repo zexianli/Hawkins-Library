@@ -1,0 +1,60 @@
+{% extends "/navbar.html" %}
+
+{% block title %}Look up Book{% endblock %}
+
+{% block content %}
+    <form method="POST">
+        <fieldset><legend>Look Up Book</legend>
+            <label for="title">Title <span class="required">*</span></label><br>
+            <select name="titleSelect" id="titleSelect">
+                {% for item in title %}
+                    <option value="{{ item.1 }}">{{ item.1 }}</option>
+                {% endfor %}
+            </select>
+            <!--
+            <input type="text" id="title" name="title" required><br>
+            -->
+            
+            <!--
+            <label for="publicationYear">Publication Year <span class="required">*</span></label><br>
+            <input type="text" id="publicationYear" name="publicationYear" required><br>
+
+            <label for="author">Author's First Name <span class="required">*</span></label><br>
+            <input type="text" id="author" name="author" required><br>
+            -->
+            
+
+            <input type="submit" value="Submit">
+        </fieldset>
+    </form>
+
+    <div class="query_message">
+        <p>{{query_message}}</p>
+    </div>
+
+    <h3>Book(s)</h3>
+    <table>
+        <thead>
+            <th>ISBN</th>
+            <th>Title</th>
+            <th>Publication Year</th>
+            <th>Number of copies</th>
+            <th>Number checked out</th>
+            <th>Author first name</th>
+            <th>Author last name</th>
+        </thead>
+        <tbody>
+            {% for r in rows %}
+            <tr>
+                <td> {{ r.0 }} </td>
+                <td> {{ r[1] }} </td>
+                <td> {{ r[2] }} </td>
+                <td> {{ r[3] }} </td>
+                <td> {{ r[4] }} </td>
+                <td> {{ r[5] }} </td>
+                <td> {{ r[6] }} </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

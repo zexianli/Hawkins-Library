@@ -1,0 +1,9 @@
+{% extends "/navbar.html" %}
+
+{% block content %}
+<ol>
+    {% for r in rows %}
+      <li> {{ r }} </li>
+    {% endfor %}
+</ol>
+{% endblock %}

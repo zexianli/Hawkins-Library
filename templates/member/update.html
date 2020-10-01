@@ -1,0 +1,40 @@
+{% extends "/navbar.html" %}
+
+{% block title %}Update Member{% endblock %}
+
+{% block content %}
+    <form method="POST">
+        <fieldset><legend>Select Member to Update</legend>
+            <label for="memberID">Member ID <span class="required">*</span></label><br>
+            <input type="text" id="memberID" name="memberID"><br>
+
+            <input type="submit" value="Submit">
+        </fieldset>
+    </form>
+
+    <div class="query_message">
+        <p>{{query_message}}</p>
+    </div>
+    
+    <h3>Member(s)</h3>
+    <table>
+        <thead>
+            <th>Member ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Address</th>
+            <th>Email</th>
+        </thead>
+        <tbody>
+            {% for r in rows %}
+            <tr>
+                <td> {{ r.0 }} </td>
+                <td> {{ r[1] }} </td>
+                <td> {{ r[2] }} </td>
+                <td> {{ r[3] }} </td>
+                <td> {{ r[4] }} </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "/navbar.html" %}
+
+{% block title %}Update Member Form{% endblock %}
+
+{% block content %}
+    <form action="/member/updateForm" method="POST">   
+        <fieldset><legend>Update Member</legend>
+            <input type="hidden" id="memberID" name="memberID" value="{{ member[0] }}">
+
+            <label for="fname">First Name </label><br>
+            <input type="text" id="fname" name="fname" value="{{ member[1] }}"><br>
+
+            <label for="lname">Last Name </label><br>
+            <input type="text" id="lname" name="lname" value="{{ member[2] }}"><br>
+
+            <label for="address">Address </label><br>
+            <input type="text" id="address" name="address" value="{{ member[3] }}"><br>
+
+            <label for="email">Email </label><br>
+            <input type="text" id="email" name="email" value="{{ member[4] }}"><br>
+
+            <input type="submit" value="Submit">
+        </fieldset>
+    </form>
+{% endblock %}

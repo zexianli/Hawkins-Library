@@ -1,0 +1,36 @@
+/* Tables */
+/* Source: https://www.w3schools.com/w3css/w3css_tables.asp */
+
+/* Center Tables */
+h3 {
+    text-align: center;
+    font-family: WorkSans-Bold;   
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse: collapse;
+    font-family: WorkSans-Regular;
+ }
+
+ th {
+    font-family: WorkSans-Regular;
+    font-size: 15px;   
+ }
+
+ td {
+    font-family: Roboto-Regular;
+    font-size: 13px;
+ }
+
+th, td {
+    border-bottom: 1px solid #ddd;
+    padding: 7px;
+    padding-right: 10px;
+    text-align: left;
+}
+
+ tr:hover {
+     background-color: #f5f5f5;
+}

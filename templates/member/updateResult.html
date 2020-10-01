@@ -1,0 +1,49 @@
+{% extends "/navbar.html" %}
+
+{% block title %}Update Member{% endblock %}
+
+{% block content %}
+<h3>Updated Member</h3>
+<table>
+    <thead>
+        <th>Member ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Address</th>
+        <th>Email</th>
+    </thead>
+    <tbody>
+        {% for u in updatedRows %}
+        <tr>
+            <td> {{ u.0 }} </td>
+            <td> {{ u[1] }} </td>
+            <td> {{ u[2] }} </td>
+            <td> {{ u[3] }} </td>
+            <td> {{ u[4] }} </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+    
+    <h3>All Member(s)</h3>
+    <table>
+        <thead>
+            <th>Member ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Address</th>
+            <th>Email</th>
+        </thead>
+        <tbody>
+            {% for r in allRows %}
+            <tr>
+                <td> {{ r.0 }} </td>
+                <td> {{ r[1] }} </td>
+                <td> {{ r[2] }} </td>
+                <td> {{ r[3] }} </td>
+                <td> {{ r[4] }} </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

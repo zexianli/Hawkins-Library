@@ -1,0 +1,31 @@
+{% extends "/navbar.html" %}
+
+{% block title %}Update Associated Employee Form{% endblock %}
+
+{% block content %}
+    <form action="/transaction/updateForm" method="POST">   
+        <fieldset><legend>Update Associated Employee</legend>
+            <input type="hidden" id="checkedOutBookID" name="checkedOutBookID" value="{{ transaction[0] }}">
+
+            <input type="hidden" id="memberID" name="memberID" value="{{ transaction[1] }}">
+
+            <label for="employeeID">Employee ID </label><br>
+            <input type="text" id="employeeID" name="employeeID" value="{{ transaction[2] }}"><br>
+
+            <input type="hidden" id="isbn" name="isbn" value="{{ transaction[3] }}">
+
+            <input type="hidden" id="checkOutDate" name="checkOutDate" value="{{ transaction[4] }}">
+
+            <input type="hidden" id="dueDate" name="dueDate" value="{{ transaction[5] }}">
+
+            <input type="hidden" id="returnDate" name="returnDate" value="{{ transaction[6] }}">
+
+            <input type="submit" value="Submit">
+        </fieldset>
+    </form>
+
+    <div class="query_message">
+        <p>{{query_message}}</p>
+    </div>
+    
+{% endblock %}

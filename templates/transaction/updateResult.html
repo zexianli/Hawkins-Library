@@ -1,0 +1,65 @@
+{% extends "/navbar.html" %}
+
+{% block title %}Update Member{% endblock %}
+
+{% block content %}
+<h3>Updated Transaction</h3>
+<table>
+    <thead>
+        <th>Member ID</th>
+        <th>Member's First Name</th>
+        <th>Member's Last Name</th>
+        <th>ISBN</th>
+        <th>Title</th>
+        <th>Check Out Date</th>
+        <th>Due Date</th>
+        <th>Return Date</th>
+        <th>Employee ID</th>
+    </thead>
+    <tbody>
+        {% for u in updatedRows %}
+        <tr>
+            <td> {{ u.0 }} </td>
+            <td> {{ u[1] }} </td>
+            <td> {{ u[2] }} </td>
+            <td> {{ u[3] }} </td>
+            <td> {{ u[4] }} </td>
+            <td> {{ u[5] }} </td>                
+            <td> {{ u[6] }} </td>
+            <td> {{ u[7] }} </td>
+            <td> {{ u[8] }} </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+   
+<h3>All Transaction(s)</h3>
+<table>
+    <thead>
+        <th>Member ID</th>
+        <th>Member's First Name</th>
+        <th>Member's Last Name</th>
+        <th>ISBN</th>
+        <th>Title</th>
+        <th>Check Out Date</th>
+        <th>Due Date</th>
+        <th>Return Date</th>
+        <th>Employee ID</th>
+    </thead>
+    <tbody>
+        {% for r in allRows %}
+        <tr>
+            <td> {{ r.0 }} </td>
+            <td> {{ r[1] }} </td>
+            <td> {{ r[2] }} </td>
+            <td> {{ r[3] }} </td>
+            <td> {{ r[4] }} </td>
+            <td> {{ r[5] }} </td>                
+            <td> {{ r[6] }} </td>
+            <td> {{ r[7] }} </td>
+            <td> {{ r[8] }} </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+	<title>{% block title %}{% endblock %}</title>
+
+	<!-- stylesheets -->
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='forms.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='tables.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+
+  </head>
+ <body>
+    <!-- header -->
+	<section id="header">
+		<h1><a href="/" style="text-decoration:none;">Hawkins Public Library</a></h1>
+	</section>
+
+	<!-- navigation menu -->
+	<section id ="menu">
+	<ul>
+		<li class="dropdown">
+			<a href="" class="dropdown_button">Members</a>
+			<div class="dropdown_items">
+				<a href="/member/lookUp">Look Up Member</a>
+				<a href="/member/add">Add Member</a>
+				<a href="/member/remove">Remove Member</a>
+				<a href="/member/update">Update Member</a>
+			</div>
+		</li>
+		<li class="dropdown">
+			<a href="" class="dropdown_button">Transactions</a>
+			<div class="dropdown_items">
+				<a href="/transaction/lookUp">Look Up Transaction</a>
+				<a href="/transaction/checkOut">Check Out Book</a>
+				<a href="/transaction/checkIn">Check In Book</a>
+				<a href="/transaction/selectToUpdate">Change Associated Employee</a>
+			</div>
+		</li>
+		<li class="dropdown">
+			<a href="" class="dropdown_button">Books</a>
+			<div class="dropdown_items">
+				<a href="/book/lookUp">Look Up Book</a>
+				<a href="/book/add">Add Book</a>
+				<a href="/book/remove">Remove Book</a>
+			</div>
+		</li>
+		<li class="dropdown">
+			<a href="#" class="dropdown_button">Authors</a>
+			<div class="dropdown_items">
+				<a href="/author/lookUp">Look Up Author</a>
+				<a href="/author/add">Add Author</a>
+			</div>
+		</li>
+		<li class="dropdown">
+			<a href="#" class="dropdown_button">Employees</a>
+			<div class="dropdown_items">
+				<a href="/employee/lookUp">Look Up Employee</a>
+				<a href="/employee/add">Add Employee</a>
+			</div>
+		</li>
+	</ul>
+	</section>
+
+	<!-- content -->
+	<section id="content">
+		<!-- This section will be different for each page -->
+		{% block content %}{% endblock %}
+
+		<!-- Just testing out: for flash messages -->
+		<section id="flash_messages"></section>
+			{% with messages = get_flashed_messages() %}
+				{% if messages %}
+				<ul class=flashes>
+					{% for message in messages %}
+						<li>{{ message }}</li>
+					{% endfor %}
+				</ul>
+				{% endif %}
+			{% endwith %}
+		</section>
+		<!-- end testing out -->
+
+  {% block body %}{% endblock %}
+	</section>
+
+	<!-- footer -->
+	<section id="footer">
+		<h5>&copy; 2020 City of Hawkins, IN</h5>
+	</section>
+
+	<!-- scripts -->
+
+  </body>
+</html>

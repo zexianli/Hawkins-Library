@@ -1,0 +1,9 @@
+# Ignore .vscode folder
+.vscode
+.vs
+*.pyc
+
+# Ignore flaskApp folder
+flaskApp
+Queries.txt
+__pycache__/

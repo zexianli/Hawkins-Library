@@ -1,0 +1,44 @@
+{% extends "/navbar.html" %}
+
+{% block title %}Remove Book{% endblock %}
+
+{% block content %}
+    <form method="POST">
+        <fieldset><legend>Remove Book</legend>
+            <label for="ISBN">ISBN <span class="required">*</label><br>
+            <input type="number" id="ISBN" name="ISBN" required><br>
+
+            <input type="submit" value="Submit">
+        </fieldset>
+    </form>
+
+    <div class="query_message">
+        <p>{{query_message}}</p>
+    </div>
+
+    <h3>Book(s)</h3>
+    <table>
+        <thead>
+            <th>ISBN</th>
+            <th>Title</th>
+            <th>Publication Year</th>
+            <th>Number of copies</th>
+            <th>Number checked out</th>
+            <th>Author first name</th>
+            <th>Author last name</th>
+        </thead>
+        <tbody>
+            {% for r in rows %}
+            <tr>
+                <td> {{ r.0 }} </td>
+                <td> {{ r[1] }} </td>
+                <td> {{ r[2] }} </td>
+                <td> {{ r[3] }} </td>
+                <td> {{ r[4] }} </td>
+                <td> {{ r[5] }} </td>
+                <td> {{ r[6] }} </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

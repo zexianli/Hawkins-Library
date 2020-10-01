@@ -1,0 +1,54 @@
+{% extends "/navbar.html" %}
+
+{% block title %}Check out Book{% endblock %}
+
+{% block content %}
+    <form method="POST">
+        <fieldset><legend>Check Out Book</legend>
+            <label for="memberID">Member ID <span class="required">*</span></label><br>
+            <input type="number" id="memberID" name="memberID" required><br>
+            
+            <label for="isbn">ISBN <span class="required">*</span></label><br>
+            <input type="number" id="isbn" name="isbn" required><br>
+
+            <label for="employeeID">Employee ID </label><br>
+            <input type="number" id="employeeID" name="employeeID"><br>
+
+            <input type="submit" value="Submit">
+        </fieldset>
+    </form>
+
+    <div class="query_message">
+        <p>{{query_message}}</p>
+    </div>
+
+    <h3>Checked Out Book(s)</h3>
+    <table>
+        <thead>
+            <th>Member ID</th>
+            <th>Member's First Name</th>
+            <th>Member's Last Name</th>
+            <th>ISBN</th>
+            <th>Title</th>
+            <th>Check Out Date</th>
+            <th>Due Date</th>
+            <th>Return Date</th>
+            <th>Employee ID</th>
+        </thead>
+        <tbody>
+            {% for r in rows %}
+            <tr>
+                <td> {{ r.0 }} </td>
+                <td> {{ r[1] }} </td>
+                <td> {{ r[2] }} </td>
+                <td> {{ r[3] }} </td>
+                <td> {{ r[4] }} </td>
+                <td> {{ r[5] }} </td>                
+                <td> {{ r[6] }} </td>
+                <td> {{ r[7] }} </td>
+                <td> {{ r[8] }} </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
